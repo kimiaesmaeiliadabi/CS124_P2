@@ -99,7 +99,6 @@ def read_input(filepath, n):
 
 def main():
     if len(sys.argv) != 4:
-        print("Usage: python3 strassen.py <flag> <dimension> <inputfile>", file=sys.stderr)
         sys.exit(1)
 
     flag = sys.argv[1]
@@ -109,10 +108,6 @@ def main():
     cutoff = 64  # best experimental cutoff
 
     A, B = read_input(inputfile, n)
-
-    if flag != "0":
-        # reserved for your own debugging / experiments
-        pass
 
     start = time.perf_counter()
     C = strassen(A, B, cutoff)
