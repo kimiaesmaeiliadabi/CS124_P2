@@ -117,7 +117,7 @@ def main():
     if len(sys.argv) != 4:
         sys.exit(1)
 
-    flag = sys.argv[1]  
+    _flag = sys.argv[1]  
     n = int(sys.argv[2])
     inputfile = sys.argv[3]
 
@@ -129,8 +129,6 @@ def main():
     start = time.perf_counter()
     C = strassen(A, B, cutoff)
     elapsed = time.perf_counter() - start
-
-    print(f"Time: {elapsed:.6f}s", file=sys.stderr)
 
     for i in range(n):
         print(C[i][i])
