@@ -120,7 +120,7 @@ if __name__ == "__main__":
         A = pad_matrix(A, m)
         B = pad_matrix(B, m)
 
-    cutoff = 16   
+    cutoff = 32
 
     C = strassen(A, B, cutoff)
 
