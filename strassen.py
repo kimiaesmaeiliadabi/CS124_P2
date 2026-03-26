@@ -43,7 +43,7 @@ def naive(A, B):
     return C
 
 
-def strassen(A, B, cutoff=32):
+def strassen(A, B, cutoff=64):
     n = len(A)
 
     if n <= cutoff:
@@ -106,7 +106,7 @@ def main():
     n = int(sys.argv[2])
     inputfile = sys.argv[3]
 
-    cutoff = 32  # best experimental cutoff
+    cutoff = 64  # best experimental cutoff
 
     A, B = read_input(inputfile, n)
 

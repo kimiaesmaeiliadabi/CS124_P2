@@ -36,15 +36,14 @@ def benchmark_crossover():
     random.seed(124)
     sizes = [16, 32, 64, 96, 128, 192, 256, 320, 512]
 
-    print("\nNaive vs Strassen(cutoff=32)")
+    print("\nNaive vs Strassen(cutoff=64)")
     for n in sizes:
         A = random_matrix(n)
         B = random_matrix(n)
 
         t_naive = best_of_three(naive, A, B)
-        t_strassen = best_of_three(strassen, A, B, 32)
-
-        print(f"n={n}: naive={t_naive:.6f}, strassen32={t_strassen:.6f}")
+        t_strassen = best_of_three(strassen, A, B, 64)
+        print(f"n={n}: naive={t_naive:.6f}, strassen64={t_strassen:.6f}")
 
 
 if __name__ == "__main__":
